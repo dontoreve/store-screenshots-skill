@@ -2,7 +2,7 @@
 
 > A Claude Code skill that generates beautiful, editorial-style App Store and Microsoft Store screenshots.
 
-![Store Screenshots Hero](assets/hero-banner.png)
+![Store Screenshots Hero](assets/hero-banner.png?v=2)
 
 ## What it does
 
@@ -12,7 +12,7 @@ Just type `/store-screenshots` in any Claude Code chat. The skill reads your cod
 
 ---
 
-![Features](assets/features.png)
+![Features](assets/features.png?v=2)
 
 ## Features
 
@@ -27,7 +27,7 @@ Just type `/store-screenshots` in any Claude Code chat. The skill reads your cod
 
 Screenshots generated for [Golem Type](https://golemtype.com) using a single `/store-screenshots` command:
 
-![Showcase](assets/showcase.png)
+![Showcase](assets/showcase.png?v=2)
 
 ### Landscape (Mac App Store / Microsoft Store)
 
