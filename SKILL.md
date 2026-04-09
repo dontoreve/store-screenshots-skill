@@ -234,23 +234,61 @@ Some apps use connected backgrounds where slide 1 flows into slide 2. Create thi
 - Aligning elements at edges so they "continue"
 - Maintaining consistent color temperature
 
-## Portrait (iOS) Specific Rules
+## Portrait (iOS 1290x2796) Specific Rules
 
-**CRITICAL for iOS portrait (1290x2796):**
-- This is a TALL format. Fill the space vertically.
-- Headline at top: 80-120px, centered
-- Phone mockup below: should take 50-65% of the slide height
-- Phone mockup width: 80-90% of slide width for impact
-- NO huge empty gaps between headline and mockup
-- Subtitle between headline and mockup if needed (32-40px)
-- Feature badges/pills below headline, above mockup
-- Mockup should reach near the bottom edge (with margin)
+### Hard Limits — NEVER violate these
 
-**Phone mockup sizing for iOS slides:**
-- Width: ~1000-1100px out of 1290px total (77-85%)
-- This makes the app UI clearly readable
-- Rounded corners: 44px outer frame, 36px inner screen
-- Subtle shadow: 0 24px 70px rgba(0,0,0,0.4)
+| Rule | Limit |
+|------|-------|
+| **Min headline size** | 90px (7% of width). Headlines MUST dominate. |
+| **Min body text** | 36px. Nothing smaller. If it can't be 36px, delete it. |
+| **Min label/badge text** | 28px. Smaller = invisible on phone screens. |
+| **Max text lines per slide** | 4 lines of body text. After that, it's a wall of text. |
+| **Max elements per slide** | 5 primary elements. More = visual clutter. |
+| **Max items in a row** | 3 items. NEVER 5 in a row — they become unreadable dots. |
+| **Max icon grid** | 3 columns, 2 rows (6 items total). More = too small. |
+| **Min icon size** | 80px. Smaller icons are invisible on store preview. |
+| **Safe margins** | 60px left/right, 80px top, 100px bottom |
+| **Max dead space** | 10% of slide. Fill the canvas. |
+| **Min capsule/pill text** | 28px. The "only if you want" style capsules must be large. |
+
+### Layout Patterns for Portrait
+
+**Pattern A: Hero (slide 1)**
+- Logo/mascot: 160-200px, centered, top area
+- Headline: 100-130px, centered, takes ~20% of height
+- Subtitle: 40-48px, 1-2 lines max
+- Feature card or glass panel: fills bottom 40-50%
+- CTA button at very bottom if applicable
+
+**Pattern B: Feature Demo (slides 2-3)**
+- Headline: 90-110px, centered top
+- Subtitle: 36-40px, 1 line
+- Key UI element (overlay pill, button) displayed LARGE at native size
+- Steps/cards: vertically stacked, each card takes full width, 36px+ text inside
+- Privacy/trust section at bottom if space allows
+
+**Pattern C: Before/After (slide 3-4)**
+- Headline: 90-110px
+- Two full-width color-blocked cards stacked vertically
+- Input card: blue-tinted, 40px+ text
+- Output card: accent-tinted, 40px+ text
+- Arrow/label between: 28px+ text, visible
+- Language pills: 3 max in a row, 28px text each
+
+**Pattern D: Compatibility (last slide)**
+- Headline: 90-110px
+- Grid: 3 columns x 2 rows MAX
+- Each grid item: 80px+ icon, 24px+ label
+- Full-width, generous padding
+
+### What NOT to do in Portrait
+
+- **NEVER put 5 small items in a row** — they become unreadable thumbnails
+- **NEVER use text below 28px** — store previews shrink screenshots to ~350px wide
+- **NEVER leave bottom 30%+ empty** — fill with content, make elements bigger, or add a section
+- **NEVER use desktop screenshots in portrait** — if app is desktop, show features as designed HTML cards/demos instead
+- **NEVER mix too many sections** — max 3 distinct sections per slide (header + main content + footer)
 
 ## Landscape (macOS/Windows) Specific Rules
 
