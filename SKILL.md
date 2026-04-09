@@ -309,6 +309,19 @@ const files = [
 
 Always create the exports folder, install puppeteer if needed, and export automatically.
 
+## DON'Ts — Critical Mistakes to Avoid
+
+**NEVER do these:**
+- **DON'T leave dead space**: If more than 15% of the slide is empty/black with nothing, you failed. Fill it with content, make elements bigger, add features, badges, or app grids.
+- **DON'T put desktop screenshots in phone mockups**: If the app is a desktop app, use desktop window frames (title bar with dots, rounded corners). NEVER squeeze a desktop UI into a phone shape.
+- **DON'T use the same layout for every slide**: Vary between centered, split, color-blocked, full-bleed. Each slide should feel different.
+- **DON'T use tiny text**: Nothing below 18px EVER. If it's not important enough to be 18px+, delete it entirely.
+- **DON'T use the same color scheme for every app**: Each app has its OWN brand colors. Extract them and use them. Orange for Golem, blue for a productivity app, yellow for a social app, etc.
+- **DON'T just resize landscape screenshots to portrait**: Portrait (iOS) needs completely different layouts — vertical stacking, centered elements, the slide is TALL not wide. Reimagine the content.
+- **DON'T put raw app screenshots if they don't fit the context**: If the app is desktop-only but you're making iOS screenshots, DON'T show the desktop UI. Instead, create native-feeling representations of what the features do using HTML (cards, text demos, icon grids, etc.)
+- **DON'T mix ALL-CAPS and normal case randomly**: Pick one style per slide and be consistent.
+- **DON'T use placeholder-quality content**: Every text, icon, and element should look intentional and designed. No "Lorem ipsum" or generic filler.
+
 ## Output Checklist
 
 Before delivering, verify:
