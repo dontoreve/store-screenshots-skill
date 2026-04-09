@@ -39,6 +39,14 @@ Screenshots generated for [Golem Type](https://golemtype.com) using a single `/s
 |-------------------|----------------|
 | ![Everywhere](examples/golem-works-everywhere.png) | ![Hero ES](examples/golem-hero-es.png) |
 
+### Portrait (iOS App Store)
+
+The same skill adapts to vertical 1290x2796 layouts for iOS:
+
+| Hero | Push and Talk | AI Rewrite |
+|------|---------------|------------|
+| <img src="examples/ios-example-1.png" width="250"> | <img src="examples/ios-example-2.png" width="250"> | <img src="examples/ios-example-3.png" width="250"> |
+
 ## Install
 
 Copy the `SKILL.md` file to your Claude Code skills directory:
