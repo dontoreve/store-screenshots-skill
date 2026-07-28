@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1290px; font-family: 'Inter', system-ui, sans-serif; }
+
+  .slide { width: 1290px; height: 2796px; position: relative; overflow: hidden; }
+  .slide + .slide { border-top: 4px solid #f0913a; }
+
+  /* ═══ SLIDE 1 — HERO ═══ */
+  .s1 {
+    background: linear-gradient(170deg, #f5a04a 0%, #f0913a 30%, #d97020 60%, #a04a10 100%);
+    display: flex; flex-direction: column;
+  }
+
+  .s1-top {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 180px 80px 50px; gap: 24px;
+  }
+  .s1-mascot { width: 140px; height: 140px; object-fit: contain; filter: drop-shadow(0 8px 30px rgba(0,0,0,0.15)); }
+  .s1-h { font-size: 140px; font-weight: 900; letter-spacing: -7px; line-height: 0.88; text-align: center; color: white; }
+  .s1-sub { font-size: 44px; font-weight: 500; color: rgba(255,255,255,0.8); text-align: center; }
+
+  /* iPhone — explicit height to fill bottom */
+  .s1-phone {
+    width: 1000px;
+    margin: 0 auto;
+    min-height: 1900px;
+    background: #1a1a1a; border-radius: 56px 56px 0 0; padding: 12px 12px 0;
+    box-shadow: 0 -20px 80px rgba(0,0,0,0.3);
+  }
+  .screen { background: #141614; border-radius: 46px 46px 0 0; overflow: hidden; padding: 56px 28px 0; }
+
+  /* Golem mobile UI */
+  .m-card { background: #1E211F; border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 28px; margin-bottom: 16px; }
+  .m-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .m-card-title { font-size: 24px; font-weight: 700; color: rgba(255,248,240,0.85); }
+  .m-badge { background: rgba(240,145,58,0.1); border: 1px solid rgba(240,145,58,0.2); border-radius: 8px; padding: 4px 12px; font-size: 14px; font-weight: 700; color: #f0913a; }
+  .m-stats { display: flex; gap: 12px; }
+  .m-stat { flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 14px; padding: 18px; text-align: center; }
+  .m-stat-num { font-size: 32px; font-weight: 800; color: #f0913a; }
+  .m-stat-lbl { font-size: 13px; color: rgba(255,248,240,0.35); margin-top: 2px; }
+  .m-row { background: #1E211F; border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 22px 28px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
+  .m-row-label { font-size: 20px; font-weight: 500; color: rgba(255,248,240,0.5); }
+  .m-row-value { font-size: 20px; font-weight: 600; color: #f0913a; }
+  .m-row-value.green { color: #34C759; }
+
+
+  /* ═══ SLIDE 2 — PUSH AND TALK ═══ */
+  .s2 { background: #0f0e0d; display: flex; flex-direction: column; }
+  .s2-orb { position: absolute; border-radius: 50%; filter: blur(200px); pointer-events: none; width: 1000px; height: 1000px; background: radial-gradient(circle, rgba(240,145,58,0.14) 0%, transparent 55%); top: 20%; left: 50%; transform: translateX(-50%); }
+
+  .s2-top {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 160px 80px 48px; gap: 20px;
+  }
+  .s2-h { font-size: 140px; font-weight: 900; letter-spacing: -7px; line-height: 0.88; text-align: center; color: white; }
+  .s2-sub { font-size: 40px; font-weight: 400; color: rgba(255,240,220,0.4); text-align: center; }
+
+  /* Overlay pill */
+  .pill-wrap { margin-top: 8px; }
+  .real-pill {
+    height: 100px; border-radius: 50px;
+    display: inline-flex; align-items: center;
+    padding: 0 36px; gap: 18px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, rgba(35,28,18,0.94) 0%, rgba(30,24,16,0.95) 50%, rgba(25,28,35,0.94) 100%);
+    border: 1px solid rgba(255,200,120,0.18);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,220,160,0.12);
+  }
+  .real-pill::before { content: ''; position: absolute; inset: 0; border-radius: 50px; background: linear-gradient(135deg, rgba(255,180,60,0.06) 0%, rgba(255,130,50,0.08) 30%, rgba(80,160,255,0.05) 70%, rgba(100,200,255,0.04) 100%); pointer-events: none; }
+  .real-pill::after { content: ''; position: absolute; top: 0; left: 12%; right: 12%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0.25) 70%, transparent); pointer-events: none; }
+  .rd { width: 18px; height: 18px; border-radius: 50%; background: #ff4d4d; box-shadow: 0 0 12px rgba(255,77,77,0.6); z-index: 1; flex-shrink: 0; }
+  .rb-wrap { display: flex; align-items: center; gap: 6px; height: 50px; z-index: 1; }
+  .rb-wrap .rb { width: 7px; border-radius: 4px; }
+  .rb-wrap .rb:nth-child(1) { height: 16px; background: hsla(45,85%,65%,0.9); }
+  .rb-wrap .rb:nth-child(2) { height: 30px; background: hsla(41,85%,65%,0.9); }
+  .rb-wrap .rb:nth-child(3) { height: 42px; background: hsla(36,85%,65%,0.9); }
+  .rb-wrap .rb:nth-child(4) { height: 22px; background: hsla(32,85%,65%,0.9); }
+  .rb-wrap .rb:nth-child(5) { height: 36px; background: hsla(28,85%,65%,0.9); }
+  .rb-wrap .rb:nth-child(6) { height: 24px; background: hsla(23,85%,65%,0.9); }
+  .rb-wrap .rb:nth-child(7) { height: 32px; background: hsla(19,85%,65%,0.9); }
+  .rb-wrap .rb:nth-child(8) { height: 18px; background: hsla(207,70%,72%,0.9); }
+  .rb-wrap .rb:nth-child(9) { height: 12px; background: hsla(220,70%,72%,0.9); }
+  .rl { font-size: 30px; font-weight: 500; color: rgba(255,255,255,0.85); z-index: 1; }
+
+  .s2-phone {
+    width: 1000px; z-index: 1;
+    margin: 0 auto;
+    min-height: 1600px;
+    background: #1a1a1a; border-radius: 56px 56px 0 0; padding: 12px 12px 0;
+    box-shadow: 0 -20px 80px rgba(0,0,0,0.4);
+  }
+  .m-typing-app { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .m-typing-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(240,145,58,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .m-typing-name { font-size: 18px; font-weight: 600; color: rgba(255,248,240,0.4); }
+  .m-text-area { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 28px; margin-bottom: 16px; }
+  .m-typed { font-size: 24px; line-height: 1.6; color: rgba(255,248,240,0.8); }
+  .m-cursor { display: inline-block; width: 2px; height: 24px; background: #f0913a; margin-left: 2px; vertical-align: text-bottom; }
+  .m-mini-pill { display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .m-mini-pill-inner { height: 40px; border-radius: 20px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; background: linear-gradient(135deg, rgba(35,28,18,0.94), rgba(25,28,35,0.94)); border: 1px solid rgba(255,200,120,0.12); }
+  .m-md { width: 6px; height: 6px; border-radius: 50%; background: #ff4d4d; }
+  .m-mb { display: flex; gap: 2px; align-items: center; height: 16px; }
+  .m-mb .b { width: 2.5px; border-radius: 2px; }
+  .m-mb .b:nth-child(1) { height: 5px; background: hsla(45,85%,65%,0.8); }
+  .m-mb .b:nth-child(2) { height: 10px; background: hsla(41,85%,65%,0.8); }
+  .m-mb .b:nth-child(3) { height: 14px; background: hsla(36,85%,65%,0.8); }
+  .m-mb .b:nth-child(4) { height: 8px; background: hsla(32,85%,65%,0.8); }
+  .m-mb .b:nth-child(5) { height: 12px; background: hsla(28,85%,65%,0.8); }
+  .m-mb .b:nth-child(6) { height: 6px; background: hsla(207,70%,72%,0.8); }
+  .m-ml { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 500; }
+  .m-recent { padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 14px; }
+  .m-recent-label { font-size: 14px; color: rgba(255,248,240,0.25); margin-bottom: 10px; }
+  .m-recent-item { font-size: 20px; color: rgba(255,248,240,0.5); line-height: 1.5; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .m-recent-item:last-child { border-bottom: none; }
+
+
+  /* ═══ SLIDE 3 — AI REWRITE ═══ */
+  .s3 { background: #0f0e0d; display: flex; flex-direction: column; }
+
+  .s3-top {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 160px 80px 40px; gap: 20px;
+  }
+  .s3-h { font-size: 120px; font-weight: 900; letter-spacing: -6px; line-height: 0.90; text-align: center; }
+  .s3-h .w { color: white; }
+  .s3-h .o { background: linear-gradient(135deg, #f0913a, #f5b868); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .s3-capsule { display: inline-flex; background: linear-gradient(135deg, rgba(35,28,18,0.96), rgba(28,24,16,0.98)); border: 1px solid rgba(255,200,120,0.22); border-radius: 100px; padding: 20px 48px; transform: rotate(-2deg); box-shadow: 0 10px 35px rgba(0,0,0,0.5); }
+  .s3-capsule span { font-size: 34px; font-weight: 600; color: rgba(255,248,240,0.85); }
+
+  /* Rewrite blocks — centered, filling width */
+  .s3-demo {
+    position: relative; z-index: 1;
+    padding: 0 80px;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .s3-block { border-radius: 32px; padding: 44px; }
+  .s3-block.input { background: linear-gradient(135deg, #1a2744, #162040); border: 1px solid rgba(96,165,250,0.2); }
+  .s3-block.output { background: linear-gradient(135deg, #2a1a0a, #1f1508); border: 1px solid rgba(240,145,58,0.2); }
+  .s3-block-label { font-size: 28px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 18px; }
+  .input .s3-block-label { color: #60a5fa; }
+  .output .s3-block-label { color: #f0913a; }
+  .s3-block-text { font-size: 42px; font-weight: 500; line-height: 1.4; color: rgba(255,248,240,0.85); }
+  .s3-arrow { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 28px 0; }
+  .s3-arrow-label { font-size: 28px; font-weight: 700; color: #f0913a; text-transform: uppercase; letter-spacing: 2px; }
+
+  .s3-phone {
+    width: 1000px; z-index: 1;
+    margin: 0 auto;
+    min-height: 1100px;
+    background: #1a1a1a; border-radius: 56px 56px 0 0; padding: 12px 12px 0;
+    box-shadow: 0 -20px 80px rgba(0,0,0,0.4);
+  }
+  .m-train-h { font-size: 28px; font-weight: 800; color: white; margin-bottom: 20px; }
+  .m-train-card { background: #1E211F; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px; margin-bottom: 12px; }
+  .m-train-card-title { font-size: 16px; font-weight: 600; color: rgba(255,248,240,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .m-train-word { font-size: 22px; font-weight: 500; color: rgba(255,248,240,0.8); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .m-train-word:last-child { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- ═══ SLIDE 1 ═══ -->
+<div class="slide s1">
+  <div class="s1-top">
+    <img class="s1-mascot" src="../examples/golem-mascot.png" alt="Golem">
+    <div class="s1-h">Save hours<br>every week.</div>
+    <p class="s1-sub">Speak instead of typing. 3x faster.</p>
+  </div>
+  <div class="s1-phone">
+    <div class="screen">
+      <div class="m-card">
+        <div class="m-card-header"><div class="m-card-title">This month</div><div class="m-badge">PRO</div></div>
+        <div class="m-stats">
+          <div class="m-stat"><div class="m-stat-num">23,011</div><div class="m-stat-lbl">Words typed</div></div>
+          <div class="m-stat"><div class="m-stat-num">22</div><div class="m-stat-lbl">AI Rewrites</div></div>
+        </div>
+      </div>
+      <div class="m-row"><div class="m-row-label">Shortcut</div><div class="m-row-value">F13</div></div>
+      <div class="m-row"><div class="m-row-label">Language</div><div class="m-row-value">English</div></div>
+      <div class="m-row"><div class="m-row-label">Output language</div><div class="m-row-value">Spanish</div></div>
+      <div class="m-row"><div class="m-row-label">AI Rewrite</div><div class="m-row-value green">Enabled</div></div>
+      <div class="m-row"><div class="m-row-label">Audio input</div><div class="m-row-value">MacBook Pro Mic</div></div>
+      <div class="m-row"><div class="m-row-label">Auto-paste</div><div class="m-row-value green">On</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 2 ═══ -->
+<div class="slide s2">
+  <div class="s2-orb"></div>
+  <div class="s2-top">
+    <div class="s2-h">Just push<br>and talk.</div>
+    <p class="s2-sub">Your words appear instantly.</p>
+    <div class="pill-wrap">
+      <div class="real-pill">
+        <div class="rd"></div>
+        <div class="rb-wrap"><div class="rb"></div><div class="rb"></div><div class="rb"></div><div class="rb"></div><div class="rb"></div><div class="rb"></div><div class="rb"></div><div class="rb"></div><div class="rb"></div></div>
+        <span class="rl">Listening...</span>
+      </div>
+    </div>
+  </div>
+  <div class="s2-phone">
+    <div class="screen">
+      <div class="m-typing-app"><div class="m-typing-icon">💬</div><div class="m-typing-name">Slack — #general</div></div>
+      <div class="m-text-area">
+        <div class="m-typed">Hi team, just wanted to check in about the Q2 roadmap. I reviewed the timeline and I think we should prioritize the API integration before the dashboard redesign.<span class="m-cursor"></span></div>
+      </div>
+      <div class="m-mini-pill"><div class="m-mini-pill-inner"><div class="m-md"></div><div class="m-mb"><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div></div><span class="m-ml">Listening...</span></div></div>
+      <div class="m-recent">
+        <div class="m-recent-label">Recent</div>
+        <div class="m-recent-item">Can you send me the report?</div>
+        <div class="m-recent-item">Let's schedule a call for tomorrow</div>
+        <div class="m-recent-item">Thanks for the update on the project</div>
+        <div class="m-recent-item">Please review the PR when you get a chance</div>
+        <div class="m-recent-item">Meeting moved to 3pm tomorrow</div>
+      </div>
+
+      <div class="m-card" style="margin-top:16px">
+        <div class="m-card-header"><div class="m-card-title">Stats</div></div>
+        <div class="m-stats">
+          <div class="m-stat"><div class="m-stat-num">3x</div><div class="m-stat-lbl">Faster</div></div>
+          <div class="m-stat"><div class="m-stat-num">50+</div><div class="m-stat-lbl">Languages</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SLIDE 3 ═══ -->
+<div class="slide s3">
+  <div class="s3-top">
+    <div class="s3-h"><span class="w">Say it messy.</span><br><span class="o">Golem makes<br>it perfect.</span></div>
+    <div class="s3-capsule"><span>only if you want</span></div>
+  </div>
+  <div class="s3-demo">
+    <div class="s3-block input">
+      <div class="s3-block-label">You speak</div>
+      <div class="s3-block-text">"we need to move the deadline because the designs aren't done"</div>
+    </div>
+    <div class="s3-arrow"><div class="s3-arrow-label">Golem Rewrites</div></div>
+    <div class="s3-block output">
+      <div class="s3-block-label">Golem types</div>
+      <div class="s3-block-text">I'd like to propose extending the deadline as the design phase is still in progress.</div>
+    </div>
+  </div>
+  <div class="s3-phone">
+    <div class="screen">
+      <div class="m-train-h">Training</div>
+      <div class="m-train-card">
+        <div class="m-train-card-title">Custom Words</div>
+        <div class="m-train-word">Golem</div>
+        <div class="m-train-word">API</div>
+        <div class="m-train-word">Anthropic</div>
+      </div>
+      <div class="m-train-card">
+        <div class="m-train-card-title">Auto-Corrections</div>
+        <div class="m-train-word">team → Team</div>
+        <div class="m-train-word">hashtag → #</div>
+        <div class="m-train-word">cant → can't</div>
+      </div>
+
+      <div class="m-row" style="margin-top:12px"><div class="m-row-label">Vocabulary</div><div class="m-row-value">128 words</div></div>
+      <div class="m-row"><div class="m-row-label">Corrections</div><div class="m-row-value">45 rules</div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
